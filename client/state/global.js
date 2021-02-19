@@ -2,7 +2,7 @@ let store = {}
 const proxy = new Proxy({}, {
   get: function (_, prop, __) {
     const value = store[prop]
-    if (value) return value
+    if (value !== undefined) return value
 
     store = { ...store, [prop]: {} }
     return store[prop]

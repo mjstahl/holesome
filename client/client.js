@@ -27,13 +27,13 @@ function moveBall() {
   const moveBy = 1
   if (upPressed) {
     y = y - moveBy
-    if (y - squareSize < 0) {
+    if (y < 0) {
       y = 0
     }
   }
   if (leftPressed) {
     x = x - moveBy
-    if (x - squareSize < 0) {
+    if (x < 0) {
       x = 0
     }
   }
