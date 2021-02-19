@@ -1,29 +1,30 @@
 import GameState from './state/global'
 import { onKeyDown, onKeyUp } from './input/keyboard'
 
-const canvas = document.getElementById("holesome")
-const ctx = canvas.getContext("2d")
+const canvas = document.querySelector('canvas')
+const ctx = canvas.getContext('2d')
 
 GameState.positionX = canvas.width / 2
 GameState.positionY = canvas.height / 2
 
 const squareSize = 5
-const moveBy = 1
 
-function drawBall() {
+function drawUser() {
+  const { positionX, positionY } = GameState
   ctx.beginPath()
 
-  ctx.rect(GameState.positionX, GameState.positionY, squareSize, squareSize)
-  ctx.fillStyle = "#0095DD"
+  ctx.rect(positionX, positionY, squareSize, squareSize)
+  ctx.fillStyle = '#0095DD'
   ctx.fill()
 
   ctx.closePath()
 }
 
 function moveBall() {
-  const { upPressed, leftPressed, downPressed, rightPressed } = GameState
+  const { keyboard: { upPressed, leftPressed, downPressed, rightPressed } } = GameState
   let { positionX: x, positionY: y } = GameState
 
+  const moveBy = 1
   if (upPressed) {
     y = y - moveBy
     if (y - squareSize < 0) {
@@ -56,11 +57,13 @@ function moveBall() {
 function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height)
 
-  drawBall()
+  drawUser()
   moveBall()
+
+  requestAnimationFrame(draw)
 }
 
 document.addEventListener('keydown', onKeyDown, false)
 document.addEventListener('keyup', onKeyUp, false)
 
-setInterval(draw, 10)
+draw()
