@@ -1,0 +1,18 @@
+{
+  "name": "holesome-client",
+  "version": "0.1.0",
+  "description": "",
+  "main": "client.js",
+  "scripts": {
+    "dev": "parcel index.html"
+  },
+  "keywords": [],
+  "author": "Mark Stahl <mjstahl@gmail.com>",
+  "license": "AGPL-3.0-only",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  },
+  "dependencies": {
+    "input": "^1.0.1"
+  }
+}
