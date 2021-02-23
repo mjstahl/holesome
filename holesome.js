@@ -1,5 +1,3 @@
-import me from 'melonjs';
-
 import GameState from './state/global'
 import { onKeyDown, onKeyUp } from './input/keyboard'
 
@@ -11,7 +9,7 @@ GameState.positionY = canvas.height / 2
 
 const squareSize = 5
 
-function drawUser() {
+function drawUser () {
   const { positionX, positionY } = GameState
   ctx.beginPath()
 
@@ -22,7 +20,7 @@ function drawUser() {
   ctx.closePath()
 }
 
-function moveBall() {
+function moveBall () {
   const { keyboard: { upPressed, leftPressed, downPressed, rightPressed } } = GameState
   let { positionX: x, positionY: y } = GameState
 
@@ -56,13 +54,13 @@ function moveBall() {
   GameState.positionY = y
 }
 
-function draw() {
+function draw () {
   ctx.clearRect(0, 0, canvas.width, canvas.height)
 
   drawUser()
   moveBall()
 
-  requestAnimationFrame(draw)
+  window.requestAnimationFrame(draw)
 }
 
 document.addEventListener('keydown', onKeyDown, false)

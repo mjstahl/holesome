@@ -4,8 +4,9 @@
   "description": "",
   "main": "holesome.js",
   "scripts": {
+    "build": "parcel build index.html",
     "dev": "parcel index.html",
-    "lint": "standard --fix 'input/**/*.js' 'state/**/*.js'"
+    "lint": "standard --fix"
   },
   "author": "Mark Stahl <mjstahl@gmail.com>",
   "license": "AGPL-3.0-only",
@@ -15,5 +16,12 @@
   },
   "dependencies": {
     "melonjs": "^8.0.1"
+  },
+  "standard": {
+    "ignore": [
+      "node_modules",
+      ".cache",
+      "dist"
+    ]
   }
 }
