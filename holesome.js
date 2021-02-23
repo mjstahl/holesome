@@ -1,3 +1,5 @@
+import me from 'melonjs';
+
 import GameState from './state/global'
 import { onKeyDown, onKeyUp } from './input/keyboard'
 

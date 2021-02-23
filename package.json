@@ -2,12 +2,11 @@
   "name": "holesome-client",
   "version": "0.1.0",
   "description": "",
-  "main": "client.js",
+  "main": "holesome.js",
   "scripts": {
     "dev": "parcel index.html",
     "lint": "standard --fix 'input/**/*.js' 'state/**/*.js'"
   },
-  "keywords": [],
   "author": "Mark Stahl <mjstahl@gmail.com>",
   "license": "AGPL-3.0-only",
   "devDependencies": {
@@ -15,6 +14,6 @@
     "standard": "*"
   },
   "dependencies": {
-    "input": "^1.0.1"
+    "melonjs": "^8.0.1"
   }
 }
