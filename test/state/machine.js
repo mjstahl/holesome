@@ -1,5 +1,5 @@
 import test from 'ava'
-import { StateMachine, State } from '../../state/machine'
+import { StateMachine, State } from '../../holesome/state/machine'
 
 test('at least one state possible state must be provided', t => {
   try {

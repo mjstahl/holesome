@@ -1,6 +1,6 @@
 import GameState from '../state/global'
 
-export function onKeyDown (e) {
+export function onKeyDown(e) {
   switch (e.key) {
     case 'w':
     case 'ArrowUp':
@@ -21,7 +21,7 @@ export function onKeyDown (e) {
   }
 }
 
-export function onKeyUp (e) {
+export function onKeyUp(e) {
   switch (e.key) {
     case 'w':
     case 'ArrowUp':
