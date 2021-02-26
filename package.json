@@ -1,27 +1,46 @@
 {
-  "name": "holesome-client",
+  "name": "holesome",
   "version": "0.1.0",
-  "description": "",
+  "description": "A game about holes and our relationship with them.",
   "main": "holesome.js",
   "scripts": {
     "build": "parcel build index.html",
     "dev": "parcel index.html",
-    "lint": "standard --fix"
+    "lint": "standard --fix",
+    "test": "ava"
   },
   "author": "Mark Stahl <mjstahl@gmail.com>",
   "license": "AGPL-3.0-only",
   "devDependencies": {
+    "@babel/core": "^7.13.1",
+    "@babel/eslint-parser": "^7.13.4",
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
+    "ava": "^3.15.0",
+    "esm": "^3.2.25",
     "parcel-bundler": "^1.12.4",
-    "standard": "*"
+    "standardx": "^7.0.0"
   },
   "dependencies": {
-    "melonjs": "^8.0.1"
+    "phaser": "^3.52.0"
+  },
+  "ava": {
+    "require": [
+      "esm"
+    ]
+  },
+  "babel": {
+    "plugins": [
+      [
+        "@babel/plugin-proposal-class-properties"
+      ]
+    ]
   },
   "standard": {
     "ignore": [
       "node_modules",
       ".cache",
       "dist"
-    ]
+    ],
+    "parser": "@babel/eslint-parser"
   }
 }
